@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/snackbar/snackbar.dart';
 
+
 class FoodScreen extends StatefulWidget {
   @override
   _FoodScreenState createState() => _FoodScreenState();
@@ -96,6 +97,8 @@ class _FoodScreenState extends State<FoodScreen> {
         }
       }
     });
+
+   
   }
 
   @override
@@ -112,6 +115,7 @@ class _FoodScreenState extends State<FoodScreen> {
             TextField(
               controller: _controller,
               decoration: const InputDecoration(
+
                 labelText: 'Enter food name',
               ),
               onChanged: (value) {
@@ -128,6 +132,7 @@ class _FoodScreenState extends State<FoodScreen> {
               child: const Text('Search'),
             ),
             if (isLoading) const CircularProgressIndicator(),
+
           ],
         ),
       ),
