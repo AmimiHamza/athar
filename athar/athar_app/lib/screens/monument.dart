@@ -22,7 +22,7 @@ class Annotation extends ArAnnotation {
 
   // Getter method for accessing the text variable
   String getTitle() {
-    return text;
+    return title;
   }
 }
 
@@ -68,7 +68,7 @@ class AnnotationView extends StatelessWidget {
                   Text(
                     annotation.getText(),
                     maxLines: 6,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontWeight: FontWeight.normal, fontSize: 10),
                   ),
                   Text(
                     '${annotation.distanceFromUser.toInt()} m',

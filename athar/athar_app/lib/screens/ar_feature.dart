@@ -4,6 +4,8 @@ import 'package:ar_location_view/ar_location_view.dart';
 import 'package:athar_app/screens/monument.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:athar_app/processus/fetch_data.dart';
+import 'dart:async';
+
 
 // ignore: must_be_immutable
 class MainScreen extends StatefulWidget {
@@ -18,12 +20,24 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   late List<CameraDescription> cameras;
   late CameraController cameraController;
+  late Timer fetchAnnotationsTimer;
 
   List<Annotation> myAnnotations = [];
 
   // getter
   List<Annotation> getAnnotations() {
     return myAnnotations;
+  }
+
+  void startFetchAnnotationsTimer() {
+    fetchAnnotationsTimer = Timer.periodic(Duration(seconds: 5), (Timer timer) {
+      // Call your fetchAnnotations function here and update myAnnotations
+      fetchMonumentsAnnotations().then((List<Annotation> fetchedAnnotations) {
+        setState(() {
+          myAnnotations = fetchedAnnotations;
+        });
+      });
+    });
   }
 
   Widget buildArLocationWidget(List<Annotation> annotations) {
@@ -59,6 +73,7 @@ class _MainScreenState extends State<MainScreen> {
   void initState() {
     super.initState();
     startCamera(direction);
+    startFetchAnnotationsTimer();
   }
 
   void startCamera(int direction) async {
@@ -83,6 +98,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   void dispose() {
     cameraController.dispose();
+    fetchAnnotationsTimer.cancel();
     super.dispose();
   }
 
@@ -98,7 +114,8 @@ class _MainScreenState extends State<MainScreen> {
           size: 40,
         ),
       ),
-      body: buildArLocationWidget(myAnnotations),
+      body:
+      buildArLocationWidget(myAnnotations),
       endDrawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
         // through the options in the drawer if there isn't enough vertical
