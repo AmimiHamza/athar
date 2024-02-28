@@ -1,5 +1,6 @@
 import 'package:athar_app/controllers/choice_controller.dart';
 import 'package:athar_app/screens/food.dart';
+import 'package:athar_app/screens/history_screen.dart';
 import 'package:athar_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -23,25 +24,21 @@ class ChoiceScreen extends StatelessWidget {
                       alignment: Alignment.topCenter),
                 ),
                 child: Center(
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            print('MOnuments !!');
-                          },
-                          child: const Image(
-                              image: AssetImage('assets/images/monuments.png')),
-                        ),
-                        const SizedBox(width: 20),
-                        InkWell(
-                          onTap: () {
-                            Get.offAll(() => FoodScreen());
-                          },
-                          child: const Image(
-                              image: AssetImage('assets/images/food.png')),
-                        )
-                      ]),
+                  child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                    InkWell(
+                      onTap: () {
+                        Get.to(() => HistoryScreen());
+                      },
+                      child: const Image(image: AssetImage('assets/images/monuments.png')),
+                    ),
+                    const SizedBox(width: 20),
+                    InkWell(
+                      onTap: () {
+                        Get.to(() => FoodScreen());
+                      },
+                      child: const Image(image: AssetImage('assets/images/food.png')),
+                    )
+                  ]),
                 )),
           ));
     }));
