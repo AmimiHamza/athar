@@ -59,10 +59,11 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     if (cameraController.value.isInitialized) {
       return Scaffold(
+        extendBodyBehindAppBar: true,
         appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-        iconTheme: const IconThemeData(color: Colors.black),
+        backgroundColor: Color.fromARGB(43, 0, 0, 0),
+        elevation: 0,
+        iconTheme: const IconThemeData(color: Color.fromARGB(255, 255, 255, 255), size: 40),
       ),
         body: Stack(
           children: [
