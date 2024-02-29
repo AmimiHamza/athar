@@ -34,7 +34,6 @@ dependencies:
 
   cloud_firestore: ^4.15.5
   firebase_core: ^2.25.4
-  
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -44,7 +43,11 @@ dependencies:
   vector_math: ^2.1.4
   ar_location_view: ^2.0.9
   geolocator: ^9.0.2
-  
+  sensors_plus: 
+  intl: ^0.19.0
+  get: ^4.6.6
+  firebase_auth: ^4.17.6
+  font_awesome_flutter: ^10.7.0
 
 
 
@@ -97,6 +100,56 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
+  
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/login_back.png
+    - assets/images/monuments.png
+    - assets/images/food.png
+
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: Mirza
+      fonts :
+        - asset: assets/fonts/Mirza-Regular.ttf
+        - asset: assets/fonts/Mirza-Bold.ttf
+        - asset: assets/fonts/Mirza-Medium.ttf 
+        - asset: assets/fonts/Mirza-SemiBold.ttf
+    - family: poppins
+      fonts :
+        - asset: assets/fonts/poppins/Poppins-Black.ttf
+        - asset: assets/fonts/poppins/Poppins-BlackItalic.ttf
+        - asset: assets/fonts/poppins/Poppins-Bold.ttf
+        - asset: assets/fonts/poppins/Poppins-BoldItalic.ttf
+        - asset: assets/fonts/poppins/Poppins-ExtraBold.ttf
+        - asset: assets/fonts/poppins/Poppins-ExtraBoldItalic.ttf
+        - asset: assets/fonts/poppins/Poppins-ExtraLight.ttf
+        - asset: assets/fonts/poppins/Poppins-ExtraLightItalic.ttf
+        - asset: assets/fonts/poppins/Poppins-Italic.ttf
+        - asset: assets/fonts/poppins/Poppins-Light.ttf
+        - asset: assets/fonts/poppins/Poppins-LightItalic.ttf
+        - asset: assets/fonts/poppins/Poppins-Medium.ttf
+        - asset: assets/fonts/poppins/Poppins-MediumItalic.ttf
+        - asset: assets/fonts/poppins/Poppins-Regular.ttf
+        - asset: assets/fonts/poppins/Poppins-SemiBold.ttf
+        - asset: assets/fonts/poppins/Poppins-SemiBoldItalic.ttf
+        - asset: assets/fonts/poppins/Poppins-Thin.ttf
+        - asset: assets/fonts/poppins/Poppins-ThinItalic.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
